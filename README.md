@@ -11,5 +11,5 @@ Membres du groupe:
     
 - présents : Édouard, Mohammed
 - contenu :
-    - création du dépôt git
+    - création du dépôt git 
 
