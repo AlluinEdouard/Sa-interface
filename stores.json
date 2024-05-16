@@ -1,0 +1,19 @@
+{
+    "project_name": "TEST1",
+    "author": "NADIR",
+    "date": "16/05/2024",
+    "store_name": "PARISSTORE",
+    "store_address": "1 RUE ROYAL",
+    "grid_size": 20,
+    "products": [
+        "LAIT",
+        "EAU",
+        "PATE"
+    ],
+    "product_positions": {
+        "LAIT": [4, 7],
+        "EAU": [16, 4],
+        "PATE": [28, 5]
+    },
+    "plan_image_path": "C:/Users/lenovo/Desktop/BUT INFO/S2/SuperMarketNavigator/TEST1/magasin.jpg"
+}
