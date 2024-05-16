@@ -35,4 +35,4 @@ Membres du groupe:
 - contenu :
      - Développement de la première application
      - Réglage de github pour tout le groupe
-     - Début de développement de la deuxième application en parallèle avec la premièere application. 
+     - Début de développement de la deuxième application en parallèle avec la première application. 
