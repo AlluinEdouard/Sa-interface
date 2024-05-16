@@ -27,3 +27,12 @@ Membres du groupe:
 - contenu :
     - problème d'envoi de code sur github (réglé)
     - conception de la première application
+ 
+
+### Jeudi 16 mai 2024 :
+
+-présents : Nadir, Mohammed, Edouard
+- contenu :
+     - Développement de la première application
+     - Réglage de github pour tout le groupe
+     - Début de développement de la deuxième application en parallèle avec la premièere application. 
