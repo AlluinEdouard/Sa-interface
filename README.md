@@ -35,29 +35,5 @@ Membres du groupe:
 
 - présents : Edouard, Nadir
 - contenu :
-    - Dévellopement du moussePressEvent pour l'application 1 "Edouard"
-
-### Vendredi 17 mai 2024 :
-
-- présents : Edouard, Nadir, Mohammed
-- contenue : 
-    - Dévellopement de open project pour l'application 1 "Edouard"
-
-### Mardi 21 mai 2024 :
-
-- présents : Edouard, Nadir, Mohammed
-- contenue : 
-    - Dévellopement de la fonctionnalité qui permet d'ajouter des articles "Edouard"
-
-### Mecredi 22 mai 2024 :
-- présents : Edouard, Nadir, Mohammed
-- contenue :
-    - Finalisation de l'application 1 "Edouard, Nadir"
-
-### Jeudi 23 mai 2024 :
-- présents : Edouard, Nadir, Mohammed
-- contenue :
-    - Début du compte rendu de l'application 1 "Edouard"
-
-
- 
+    - problème d'envoi de code sur github (réglé)
+    - conception de la première application
