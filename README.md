@@ -37,3 +37,41 @@ Membres du groupe:
 - contenu :
     - problème d'envoi de code sur github (réglé)
     - conception de la première application
+    - Dévellopement du moussePressEvent pour l'application 1 "Edouard"
+
+### Vendredi 17 mai 2024 :
+
+- présents : Edouard, Nadir, Mohammed
+- contenue : 
+    - Dévellopement de open project pour l'application 1 "Edouard"
+    - Dévellopement du save project pour l'application 1 "Mohammed"
+    - Dévellopement du new project et load_plan pour l'application 1 "Nadir"
+
+### Mardi 21 mai 2024 :
+
+- présents : Edouard, Nadir, Mohammed
+- contenue : 
+    - Dévellopement de la fonctionnalité qui permet d'ajouter des articles dans l'application 1 "Edouard, Nadir, Mohammed"
+
+### Mecredi 22 mai 2024 :
+- présents : Edouard, Nadir, Mohammed
+- contenue :
+    - Finalisation de l'application 1 "Edouard, Nadir"
+    - Dévellopement du load_project_data de l'application 2 "Mohammed"
+
+### Jeudi 23 mai 2024 :
+- présents : Edouard, Nadir, Mohammed
+- contenue :
+    - Liaison du fichier json de l'application 1 à l'application 2 "Edouard"
+    - Dévellopement du add_to_shopping_list et add_selected_products de l'application 2 "Nadir, Mohammed"
+
+### Lundi 27 mai 2024 :
+- présents : Edouard, Nadir, Mohammed
+- contenue :
+    - Dévellopement du select_store et du add_new_store "Edouard, Mohammed"
+    - réglage du problème save project de l'app 1 "Nadir"
+
+### Mercredi 30 mai 2024 :
+- présents : Edouard, Nadir, Mohammed
+- contenue :
+    - 
