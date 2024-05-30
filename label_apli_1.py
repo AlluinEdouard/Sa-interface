@@ -92,6 +92,19 @@ class application_1(QMainWindow):
                 continue
             self.scene.removeItem(item)
     
+    def mousePressEvent(self, event):
+        if event.button() == Qt.MouseButton.LeftButton:
+            pos = event.position().toPoint()
+            if self.view.rect().contains(pos):
+                scene_pos = self.view.mapToScene(pos)
+                col = int(scene_pos.x()) // self.grid_size
+                row = int(scene_pos.y()) // self.grid_size
+                product, _ = QInputDialog.getText(self, "Product", "Enter the product name:")
+                if product:
+                    self.products.append(product)
+                    self.product_positions[product] = (col, row)
+                    self.scene.addText(product).setPos(col * self.grid_size, row * self.grid_size)
+
     def open_project(self):
         
         project_file_path, _ = QFileDialog.getOpenFileName(self, "Open Project", "", "Project Files (*.json)")
