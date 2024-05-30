@@ -123,7 +123,40 @@ class application_1(QMainWindow):
                 self.scene.addText(product).setPos(col * self.grid_size, row * self.grid_size)
     
     def save_project(self):
-        pass
+        if not self.project_name:
+            self.project_name, _ = QInputDialog.getText(self, "Project Name", "Enter the project name:")
+
+        if not self.project_name:
+            return  # If no project name is provided, do not proceed with saving
+
+        project_folder = os.path.join(os.getcwd(), self.project_name)
+        if not os.path.exists(project_folder):
+            os.makedirs(project_folder)
+
+        project_info = {
+            "project_name": self.project_name,
+            "author": self.project_author,
+            "date": self.project_date,
+            "store_name": self.store_name,
+            "store_address": self.store_address,
+            "grid_size": self.grid_size,
+            "products": self.products,
+            "product_positions": self.product_positions,
+            "plan_image_path": self.plan_image_path
+        }
+
+        # Save project information
+        project_file_path = os.path.join(project_folder, f"{self.project_name}.json")
+        with open(project_file_path, 'w') as project_file:
+            json.dump(project_info, project_file, indent=4)
+
+        # Copy the plan image to the project folder
+        if self.plan_image_path:
+            plan_image_dest = os.path.join(project_folder, os.path.basename(self.plan_image_path))
+            if not os.path.exists(plan_image_dest):
+                with open(self.plan_image_path, 'rb') as fsrc:
+                    with open(plan_image_dest, 'wb') as fdst:
+                        fdst.write(fsrc.read())
     
             
 if __name__ == "__main__":
