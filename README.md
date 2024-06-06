@@ -71,7 +71,17 @@ Membres du groupe:
     - Dévellopement du select_store et du add_new_store "Edouard, Mohammed"
     - réglage du problème save project de l'app 1 "Nadir"
 
-### Mercredi 30 mai 2024 :
+### Mercredi 29 mai 2024 :
 - présents : Edouard, Nadir, Mohammed
 - contenue :
-    - 
+    - amélioration de l'application 2 pour plus d'ergonomie "Edouard, Nadir, Mohammed"
+
+### Lundi 3 juin 2024 :
+- présents : Edouard, Nadir, Mohammed
+- contenue :
+    - Problème du bouton de navigation (Les flèches rouges ne s'affichent pas) "Edouard, Nadir, Mohammed
+
+### Jeudi 6 juin 2024 :
+- présents : Edouard, Nadir, Mohammed
+- contenue : 
+    - Finalisation de l'application 2 "Edouard, Nadir, Mohammed"
