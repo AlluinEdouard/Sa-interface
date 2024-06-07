@@ -1,7 +1,7 @@
 import sys
 import json
-from PyQt6.QtWidgets import (QApplication, QWidget, QLabel, QComboBox, QLineEdit,
-                             QPushButton, QListWidget, QVBoxLayout, QHBoxLayout, QFileDialog, QMessageBox)
+from PyQt6.QtWidgets import (QApplication, QWidget, QLabel, QComboBox, QPushButton, 
+                             QListWidget, QVBoxLayout, QHBoxLayout, QFileDialog, QMessageBox)
 from PyQt6.QtGui import QPixmap, QPainter, QPen
 from PyQt6.QtCore import Qt
 
@@ -12,6 +12,8 @@ class SuperMarketNavigator(QWidget):
         self.setWindowTitle("SuperMarket Navigator")
         self.initUI()
         self.plan_image_path = None
+        self.grid_size = 20
+        self.entrance_position = (18, 13)
 
     def initUI(self):
         main_layout = QHBoxLayout()
@@ -97,6 +99,9 @@ class SuperMarketNavigator(QWidget):
             )
             self.project_info_label.setText(project_info)
 
+            # Load grid size
+            self.grid_size = self.project_data.get('grid_size', 20)
+
             # Clear existing stores and products
             self.store_combobox.clear()
             self.product_listbox.clear()
@@ -131,31 +136,34 @@ class SuperMarketNavigator(QWidget):
         pen = QPen(Qt.GlobalColor.red, 3)
         painter.setPen(pen)
 
-        # Draw the grid
-        self.draw_grid(painter, pixmap.width(), pixmap.height())
+        
 
         # Convert grid coordinates to pixel coordinates
         def grid_to_pixel(x, y, width, height, num_cells):
             cell_width = width // num_cells
             cell_height = height // num_cells
-            return (x * cell_width, y * cell_height)
+            return (x * cell_width + cell_width // 2, y * cell_height + cell_height // 2)
 
-        # Draw the path to selected products (for demonstration, using fixed coordinates)
-        path_grid = [(7, 10), (8, 10), (8, 9), (9, 9)]
-        path_pixels = [grid_to_pixel(x, y, pixmap.width(), pixmap.height(), 10) for x, y in path_grid]
-        for i in range(len(path_pixels) - 1):
-            painter.drawLine(path_pixels[i][0], path_pixels[i][1], path_pixels[i+1][0], path_pixels[i+1][1])
+        # Draw the path to selected products
+        product_positions = self.project_data.get('product_positions', {})
+        selected_products = [self.shopping_list_box.item(i).text() for i in range(self.shopping_list_box.count())]
+        path_grid = [self.entrance_position] + [product_positions[product] for product in selected_products if product in product_positions]
+
+        if len(path_grid) > 1:
+            path_pixels = [grid_to_pixel(x, y, pixmap.width(), pixmap.height(), self.grid_size) for x, y in path_grid]
+            for i in range(len(path_pixels) - 1):
+                painter.drawLine(path_pixels[i][0], path_pixels[i][1], path_pixels[i+1][0], path_pixels[i+1][1])
 
         painter.end()
 
         # Update the label with the new pixmap
         self.store_plan_image.setPixmap(pixmap)
-        QMessageBox.information(self, "Navigation", "Suivez les flèches rouges sur le plan pour acheter les produits sélectionnés.")
+        QMessageBox.information(self, "Navigation", "Suivez la ligne rouge sur le plan pour acheter les produits sélectionnés.")
 
     def draw_grid(self, painter, width, height):
         pen = QPen(Qt.GlobalColor.black, 1, Qt.PenStyle.SolidLine)
         painter.setPen(pen)
-        num_cells = 10  # Define the number of cells in the grid
+        num_cells = self.grid_size  # Use the grid size from the JSON data
         cell_width = width // num_cells
         cell_height = height // num_cells
 

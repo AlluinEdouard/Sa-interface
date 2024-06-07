@@ -12,8 +12,8 @@
     ],
     "product_positions": {
         "LAIT": [4, 7],
-        "EAU": [16, 4],
-        "PATE": [28, 5]
+        "EAU": [5, 4],
+        "PATE": [9, 9]
     },
-    "plan_image_path": "C:/Users/lenovo/Desktop/BUT INFO/S2/SuperMarketNavigator/TEST1/magasin.jpg"
+    "plan_image_path": "./magasin.jpg"
 }
