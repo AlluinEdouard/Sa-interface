@@ -9,10 +9,10 @@ Membres du groupe:
 
 ### Mardi 7 mai 2024 :
     
-- présents : Édouard, Mohammed
+- présents : Édouard, Mohammed, Nadir
 - contenu :
     - création du dépôt git "Edouard"
-    - création d'un label pour la première application "Edouard"
+    - création d'un label pour la première application "Nadir"
     - création d'un label pour la deuxième application "Mohammed"
 
 ### Lundi 13 mai 2024 :
@@ -33,11 +33,11 @@ Membres du groupe:
 
 ### Jeudi 16 mai 2024 :
 
-- présents : Edouard, Nadir
+- présents : Edouard, Nadir, Mohammed
 - contenu :
-    - problème d'envoi de code sur github (réglé)
-    - conception de la première application
-    - Dévellopement du moussePressEvent pour l'application 1 "Edouard"
+    - problème d'envoi de code sur github (réglé)"Edouard"
+    - conception de la première application "Nadir"
+    - Dévellopement du moussePressEvent pour l'application 1 "Mohammed"
 
 ### Vendredi 17 mai 2024 :
 
@@ -79,7 +79,7 @@ Membres du groupe:
 ### Lundi 3 juin 2024 :
 - présents : Edouard, Nadir, Mohammed
 - contenue :
-    - Problème du bouton de navigation (Les flèches rouges ne s'affichent pas) "Edouard, Nadir, Mohammed
+    - Problème du bouton de navigation (Les flèches rouges ne s'affichent pas) "Edouard, Nadir, Mohammed"
 
 ### Jeudi 6 juin 2024 :
 - présents : Edouard, Nadir, Mohammed
