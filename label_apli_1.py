@@ -3,7 +3,7 @@ import os
 import json
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QFileDialog,
                              QInputDialog, QGraphicsView, QGraphicsScene, QGraphicsPixmapItem)
-from PyQt6.QtGui import QPixmap, QColor, QAction
+from PyQt6.QtGui import QPixmap, QColor, QAction, QPen
 from PyQt6.QtCore import Qt
 
 class application_1(QMainWindow):
@@ -22,7 +22,7 @@ class application_1(QMainWindow):
         self.store_name = ""
         self.store_address = ""
 
-        
+        # UI Elements
         self.init_ui()
 
     def init_ui(self):
@@ -91,7 +91,7 @@ class application_1(QMainWindow):
             if isinstance(item, QGraphicsPixmapItem):
                 continue
             self.scene.removeItem(item)
-    
+
     def mousePressEvent(self, event):
         if event.button() == Qt.MouseButton.LeftButton:
             pos = event.position().toPoint()
@@ -106,7 +106,6 @@ class application_1(QMainWindow):
                     self.scene.addText(product).setPos(col * self.grid_size, row * self.grid_size)
 
     def open_project(self):
-        
         project_file_path, _ = QFileDialog.getOpenFileName(self, "Open Project", "", "Project Files (*.json)")
         if not project_file_path:
             return
@@ -134,13 +133,13 @@ class application_1(QMainWindow):
 
             for product, (col, row) in self.product_positions.items():
                 self.scene.addText(product).setPos(col * self.grid_size, row * self.grid_size)
-    
+
     def save_project(self):
         if not self.project_name:
             self.project_name, _ = QInputDialog.getText(self, "Project Name", "Enter the project name:")
 
         if not self.project_name:
-            return  # If no project name is provided, do not proceed with saving
+            return  
 
         project_folder = os.path.join(os.getcwd(), self.project_name)
         if not os.path.exists(project_folder):
@@ -155,8 +154,9 @@ class application_1(QMainWindow):
             "grid_size": self.grid_size,
             "products": self.products,
             "product_positions": self.product_positions,
-            "plan_image_path": self.plan_image_path
+            "plan_image_path": os.path.join(".", self.project_name, os.path.basename(self.plan_image_path)).replace("\\", "/")  # Replace backslashes with slashes
         }
+
 
         # Save project information
         project_file_path = os.path.join(project_folder, f"{self.project_name}.json")
@@ -170,10 +170,10 @@ class application_1(QMainWindow):
                 with open(self.plan_image_path, 'rb') as fsrc:
                     with open(plan_image_dest, 'wb') as fdst:
                         fdst.write(fsrc.read())
-    
-            
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = application_1()
     window.show()
     sys.exit(app.exec())
+
